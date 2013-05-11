@@ -12,14 +12,13 @@ package Net.ActionProcessor
 	import GameUI.Modules.CastSpirit.Data.CastSpiritData;
 	import GameUI.Modules.Equipment.command.EquipCommandList;
 	import GameUI.Modules.Forge.Data.ForgeEvent;
-	import GameUI.Modules.Stone.Datas.StoneEvents;
 	import GameUI.Modules.MainSence.Data.QuickBarData;
 	import GameUI.Modules.Meridians.model.MeridiansEvent;
 	import GameUI.Modules.Mount.MountData.MountData;
 	import GameUI.Modules.Mount.MountData.MountEvent;
 	import GameUI.Modules.NPCBusiness.Data.NPCBusinessEvent;
-	import GameUI.Modules.NewerHelp.Data.NewerHelpEvent;
 	import GameUI.Modules.NewerHelp.Data.NewerHelpData;
+	import GameUI.Modules.NewerHelp.Data.NewerHelpEvent;
 	import GameUI.Modules.Pet.Data.PetEvent;
 	import GameUI.Modules.PrepaidLevel.Data.PrepaidUIData;
 	import GameUI.Modules.RoleProperty.Datas.RoleEvents;
@@ -28,6 +27,7 @@ package Net.ActionProcessor
 	import GameUI.Modules.Soul.Proxy.SoulProxy;
 	import GameUI.Modules.Stall.Data.StallConstData;
 	import GameUI.Modules.Stall.Data.StallEvents;
+	import GameUI.Modules.Stone.Datas.StoneEvents;
 	import GameUI.Modules.ToolTip.Const.IntroConst;
 	import GameUI.MouseCursor.RepeatRequest;
 	import GameUI.Sound.SoundManager;
@@ -116,14 +116,14 @@ package Net.ActionProcessor
 			var nData6:uint = bytes.readUnsignedShort();		//0, 丢弃Y
 			var name:String = bytes.readMultiByte(16, GameCommonData.CODE);			//0, 丢弃Y
 			var i:int = 0;
-			var flag:Boolean = false;
+			
 //			Logger.Print(this, "OperateItem action =" + action);
 			
 			switch(action)
 			{
 				case ADD:
 				{
-					flag = false;
+					
 					if(GameCommonData.IsLoadUserInfo){
 						isAdd = true;
 					}
@@ -215,12 +215,11 @@ package Net.ActionProcessor
 //						trace("isBind:", obj.isBind);
 //						trace("index:", obj.index);
 //						trace("==========================================="); 
-							
-						if((flag==false) && NewerHelpData.isTip(obj.type,obj.id)){
-							flag = true;
-							
-							facade.sendNotification(NewerHelpEvent.ADD_ITEM_BAG,obj);	
+						if(NewerHelpData.isTip(obj.type,true)){
+							NewerHelpData.getCompareInfo({type:obj.type,id:obj.id},callBack);
 						}
+						
+						
 						if(obj.position>=47&&obj.position<=50)
 						{
 //							if(!BagData.isHasItemById(obj.id)) {
@@ -685,32 +684,15 @@ package Net.ActionProcessor
 			}
 		}
 		
-		/** 判断是否在新手指引中提示穿戴或使用技能 */
-		private function isTip(type:int):Boolean {
-			var flag:Boolean = false;
-			if((type<=159999&&type>=110000)||(type<=199999&&type>=170000)||(type<=229999&&type>=210000)||(type<=503999&&type>=503000)){
-				
-//				for(var i:int = 0; i<RolePropDatas.ItemList.length; i++){
-//					if(RolePropDatas.ItemList[i] == undefined){
-//						continue;
-//					}
-//					else{
-//						if(RolePropDatas.ItemList[i].type==type){
-//							flag = true;
-//							break;
-//						}	
-//					}
-//					
-//				}
-				flag = true;
-				if(BagData.getItemByType(type)){
-					flag = false;
-				}
-				
+
+		
+		private function callBack(arr:Array,obj:Object):void {
+			
+			if(arr){
+				facade.sendNotification(NewerHelpEvent.ADD_ITEM_BAG,[arr,obj]);
 			}else{
-				flag = false;
+				
 			}
-			return flag;
 		}
 		
 	}

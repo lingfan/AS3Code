@@ -1,15 +1,15 @@
 10
 
 dir
-1593
+1614
 https://win-n4oe9h0b0ve:8443/svn/Client_Code/Game
 https://win-n4oe9h0b0ve:8443/svn/Client_Code
 
 
 
-2013-05-09T08:03:22.746199Z
-1591
-xiongdian
+2013-05-10T09:50:41.785288Z
+1614
+xushengyue
 
 
 
@@ -27,9 +27,6 @@ xiongdian
 8a142385-da77-e44e-812a-f798b87e32c2
 
 Controller
-dir
-
-Vo
 dir
 
 .project
@@ -66,10 +63,13 @@ xushengyue
 
 649
 
-Net
+Vo
 dir
 
 Debug
+dir
+
+Net
 dir
 
 GameRoleManager.as
@@ -115,11 +115,11 @@ file
 
 
 
-2013-05-07T12:52:53.801828Z
-4ffbc95df59a9346416b3063861f77f1
-2013-05-06T03:55:10.360011Z
-1538
-xiongdian
+2013-05-11T07:40:52.174743Z
+c4826cce4ec157fe2e979b6af9d1d37f
+2013-05-10T09:38:30.609467Z
+1611
+xushengyue
 
 
 
@@ -141,7 +141,7 @@ xiongdian
 
 
 
-6560
+6657
 
 Swc
 dir
@@ -198,10 +198,10 @@ file
 
 
 
-2013-05-09T06:17:11.306902Z
-7f5fdca8bd8871ab49533e761aa2a1d1
-2013-05-09T02:32:23.252301Z
-1584
+2013-05-11T07:40:52.175743Z
+acfc02b6bd40b3824e1086aafb9d61a2
+2013-05-10T09:38:30.609467Z
+1611
 xushengyue
 
 
@@ -268,19 +268,15 @@ dir
 
 GameCommonData.as
 file
-1602
-
-
-
-2013-05-09T07:39:30.446404Z
-747a84fa2f7b67e031bc19a99e60e432
-2013-05-09T11:57:38.439138Z
-1602
-heyuan
 
 
 
 
+2013-05-11T07:40:52.172743Z
+61c25c946152fab545b6f63c2b9fad0f
+2013-05-09T11:59:39.493062Z
+1603
+xushengyue
 
 
 
@@ -298,5 +294,9 @@ heyuan
 
 
 
-15219
+
+
+
+
+15052
 

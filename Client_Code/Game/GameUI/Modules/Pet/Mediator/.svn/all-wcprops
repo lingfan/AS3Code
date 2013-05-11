@@ -33,11 +33,11 @@ svn:wc:ra_dav:version-url
 V 87
 /svn/Client_Code/!svn/ver/1034/Game/GameUI/Modules/Pet/Mediator/PetAtrributeMediator.as
 END
-PetInfomationMediator.as
+PetChooseTaskMediator.as
 K 25
 svn:wc:ra_dav:version-url
-V 88
-/svn/Client_Code/!svn/ver/1034/Game/GameUI/Modules/Pet/Mediator/PetInfomationMediator.as
+V 85
+/svn/Client_Code/!svn/ver/1/Game/GameUI/Modules/Pet/Mediator/PetChooseTaskMediator.as
 END
 PetFeedMediator.as
 K 25
@@ -45,23 +45,17 @@ svn:wc:ra_dav:version-url
 V 82
 /svn/Client_Code/!svn/ver/1074/Game/GameUI/Modules/Pet/Mediator/PetFeedMediator.as
 END
-PetChooseTaskMediator.as
+PetInfomationMediator.as
 K 25
 svn:wc:ra_dav:version-url
-V 85
-/svn/Client_Code/!svn/ver/1/Game/GameUI/Modules/Pet/Mediator/PetChooseTaskMediator.as
+V 88
+/svn/Client_Code/!svn/ver/1034/Game/GameUI/Modules/Pet/Mediator/PetInfomationMediator.as
 END
-PetPlayMediator.as
+PetChangeSexMediator.as
 K 25
 svn:wc:ra_dav:version-url
-V 79
-/svn/Client_Code/!svn/ver/1/Game/GameUI/Modules/Pet/Mediator/PetPlayMediator.as
-END
-PetFantasyMediator.as
-K 25
-svn:wc:ra_dav:version-url
-V 82
-/svn/Client_Code/!svn/ver/1/Game/GameUI/Modules/Pet/Mediator/PetFantasyMediator.as
+V 84
+/svn/Client_Code/!svn/ver/1/Game/GameUI/Modules/Pet/Mediator/PetChangeSexMediator.as
 END
 PetDisplayMediator.as
 K 25
@@ -69,11 +63,17 @@ svn:wc:ra_dav:version-url
 V 85
 /svn/Client_Code/!svn/ver/1482/Game/GameUI/Modules/Pet/Mediator/PetDisplayMediator.as
 END
-PetChangeSexMediator.as
+PetFantasyMediator.as
 K 25
 svn:wc:ra_dav:version-url
-V 84
-/svn/Client_Code/!svn/ver/1/Game/GameUI/Modules/Pet/Mediator/PetChangeSexMediator.as
+V 82
+/svn/Client_Code/!svn/ver/1/Game/GameUI/Modules/Pet/Mediator/PetFantasyMediator.as
+END
+PetPlayMediator.as
+K 25
+svn:wc:ra_dav:version-url
+V 79
+/svn/Client_Code/!svn/ver/1/Game/GameUI/Modules/Pet/Mediator/PetPlayMediator.as
 END
 PetPrivityMediator.as
 K 25

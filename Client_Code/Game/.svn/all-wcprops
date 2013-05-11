@@ -1,7 +1,7 @@
 K 25
 svn:wc:ra_dav:version-url
 V 35
-/svn/Client_Code/!svn/ver/1591/Game
+/svn/Client_Code/!svn/ver/1614/Game
 END
 GameInit.as
 K 25
@@ -13,7 +13,7 @@ LoadInterface.as
 K 25
 svn:wc:ra_dav:version-url
 V 52
-/svn/Client_Code/!svn/ver/1584/Game/LoadInterface.as
+/svn/Client_Code/!svn/ver/1611/Game/LoadInterface.as
 END
 .project
 K 25
@@ -31,7 +31,7 @@ GameConfigData.as
 K 25
 svn:wc:ra_dav:version-url
 V 53
-/svn/Client_Code/!svn/ver/1538/Game/GameConfigData.as
+/svn/Client_Code/!svn/ver/1611/Game/GameConfigData.as
 END
 Game.as
 K 25
@@ -49,5 +49,5 @@ GameCommonData.as
 K 25
 svn:wc:ra_dav:version-url
 V 53
-/svn/Client_Code/!svn/ver/1602/Game/GameCommonData.as
+/svn/Client_Code/!svn/ver/1603/Game/GameCommonData.as
 END

@@ -347,18 +347,15 @@ package Controller
 							
 							NewerHelpData.TASKINFO = taskInfo;
 							
-							if(NewerHelpData.isTip(int(TaskProxy.getInstance().analyseGood(taskInfo.taskPrize4).seq),-1,false)||NewerHelpData.isTip(int(TaskProxy.getInstance().analyseGood(taskInfo.taskPrize5).seq),-1,false)){
-								TaskController.isLockNpc = true;
+
+							
+							if(NewerHelpData.isTip(int(TaskProxy.getInstance().analyseGood(taskInfo.taskPrize4).seq),false)||NewerHelpData.isTip(int(TaskProxy.getInstance().analyseGood(taskInfo.taskPrize5).seq),false)){
+								
+								NewerHelpData.getCompareInfo({type:12304,id:-1},callBack);
+								
 							}else{
 								GameCommonData.UIFacadeIntance.sendNotification(NewerHelpEvent.OPEN_NEW);
 							}
-							
-//							if((!NewerHelpData.isTip(int(taskInfo.taskPrize4)))&&(!NewerHelpData.isTip(int(taskInfo.taskPrize5)))){
-//								GameCommonData.UIFacadeIntance.sendNotification(NewerHelpEvent.OPEN_NEW);
-//								
-//							}else{
-//								TaskController.isLockNpc = true;
-//							}
 							
 //							if(MainSenceData.isNewOpen(taskInfo.id)||taskInfo.taskPrize4||taskInfo.taskPrize5){
 //								TaskController.isLockNpc = true;
@@ -375,6 +372,14 @@ package Controller
 						break;
 				}
 				
+			}
+		}
+		
+		public static function callBack(arr:Array,obj:Object):void {
+			if(arr){
+				TaskController.isLockNpc = true;
+			}else{
+				GameCommonData.UIFacadeIntance.sendNotification(NewerHelpEvent.OPEN_NEW);
 			}
 		}
 		

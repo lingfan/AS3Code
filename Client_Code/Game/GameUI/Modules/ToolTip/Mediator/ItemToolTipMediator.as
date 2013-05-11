@@ -242,15 +242,15 @@ package GameUI.Modules.ToolTip.Mediator
 					else if(data.type < 230000)
 					{
 						if(!UIConstData.ToolTipShow) return;
-						if(data.data.flag){
-							isExp = false;
-							isParallel = false;
-							hasDetectYPos = false;
-							setItemToolTip = new PickEquipTip(itemToolTip, data.data, false);
-							itemToolTip.name = "itemToolTip";
-							setValues();
-							return;	
-						}
+//						if(data.data.flag){
+//							isExp = false;
+//							isParallel = false;
+//							hasDetectYPos = false;
+//							setItemToolTip = new PickEquipTip(itemToolTip, data.data, false);
+//							itemToolTip.name = "itemToolTip";
+//							setValues();
+//							return;	
+//						}
 						
 						isExp = false;
 						isParallel = false;
@@ -555,17 +555,14 @@ package GameUI.Modules.ToolTip.Mediator
 			var sceneH:int = GameCommonData.GameInstance.MainStage.stageHeight;
 			if(parallelEquip_1 && itemToolTip)
 			{
-				parallelEquip_1.x = itemToolTip.x;
-				parallelEquip_1.y = itemToolTip.y;
-				
-				itemToolTip.x = parallelEquip_1.x + 222;
-				if(itemToolTip.x > sceneW - 222)
+				parallelEquip_1.x = itemToolTip.x + 222;
+				if(parallelEquip_1.x > sceneW - 222)
 				{
-					itemToolTip.x = GameCommonData.GameInstance.TooltipLayer.mouseX - 222;
-					parallelEquip_1.x = itemToolTip.x - 222;
+					parallelEquip_1.x = GameCommonData.GameInstance.TooltipLayer.mouseX - 222;
+					itemToolTip.x = parallelEquip_1.x - 222;
 				}
 
-				itemToolTip.y = parallelEquip_1.y;
+				parallelEquip_1.y = itemToolTip.y;
 				var maxH:Number = itemToolTip.height > parallelEquip_1.height?itemToolTip.height:parallelEquip_1.height;
 				
 				if((itemToolTip.y+maxH) > sceneH)

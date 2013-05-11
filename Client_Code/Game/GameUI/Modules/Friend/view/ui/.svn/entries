@@ -1,7 +1,7 @@
 10
 
 dir
-1593
+1614
 https://win-n4oe9h0b0ve:8443/svn/Client_Code/Game/GameUI/Modules/Friend/view/ui
 https://win-n4oe9h0b0ve:8443/svn/Client_Code
 
@@ -128,16 +128,16 @@ xushengyue
 
 10894
 
-MenuItem.as
+UINewBlackListContainer.as
 file
 
 
 
 
 2013-05-06T01:41:07.413349Z
-e66232641df0dc3871accf20fb399c45
-2013-04-28T01:31:51.372834Z
-1444
+05a1d8b80a7de53445ab0670c11ffe18
+2013-05-03T11:32:08.925906Z
+1507
 xushengyue
 
 
@@ -160,7 +160,7 @@ xushengyue
 
 
 
-4343
+9341
 
 MenuItemCell.as
 file
@@ -196,16 +196,16 @@ heyuan
 
 1383
 
-UINewBlackListContainer.as
+MenuItem.as
 file
 
 
 
 
 2013-05-06T01:41:07.413349Z
-05a1d8b80a7de53445ab0670c11ffe18
-2013-05-03T11:32:08.925906Z
-1507
+e66232641df0dc3871accf20fb399c45
+2013-04-28T01:31:51.372834Z
+1444
 xushengyue
 
 
@@ -228,41 +228,7 @@ xushengyue
 
 
 
-9341
-
-FriendGroup.as
-file
-
-
-
-
-2013-05-06T01:41:07.413349Z
-5f47c4bc9ab61377ea55c36bb40d3cbb
-2012-07-23T08:10:03.894451Z
-1
-wuzhouhai
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-571
+4343
 
 UIFriendsList.as
 file
@@ -297,6 +263,40 @@ wuzhouhai
 
 
 17062
+
+FriendGroup.as
+file
+
+
+
+
+2013-05-06T01:41:07.413349Z
+5f47c4bc9ab61377ea55c36bb40d3cbb
+2012-07-23T08:10:03.894451Z
+1
+wuzhouhai
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+571
 
 UINewEnemyContainer.as
 file
@@ -400,40 +400,6 @@ wuzhouhai
 
 185
 
-FriendChatCell.as
-file
-
-
-
-
-2013-05-06T01:41:07.428949Z
-931f483ea8412313894aa0221ea3ee28
-2012-07-23T08:10:03.894451Z
-1
-wuzhouhai
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-4004
-
 UIEnemyList.as
 file
 
@@ -467,6 +433,40 @@ wuzhouhai
 
 
 2380
+
+FriendChatCell.as
+file
+
+
+
+
+2013-05-06T01:41:07.428949Z
+931f483ea8412313894aa0221ea3ee28
+2012-07-23T08:10:03.894451Z
+1
+wuzhouhai
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+4004
 
 UIFriendContainer.as
 file

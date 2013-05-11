@@ -3,6 +3,7 @@ package Net.ActionProcessor
 	import Net.GameAction;
 	
 	import OopsEngine.AI.PathFinder.MapTileModel;
+	import OopsEngine.Role.GameRole;
 	import OopsEngine.Scene.StrategyElement.GameElementAnimal;
 	import OopsEngine.Scene.StrategyElement.GameElementSkins;
 	
@@ -43,6 +44,7 @@ package Net.ActionProcessor
 			{				
 				var player:GameElementAnimal = GameCommonData.SameSecnePlayerList[obj.RoleID];
 				
+				if(player.Role.Type == GameRole.TYPE_ENEMY)
 				// 如果是自己宠物就是用通信协议移动（不是自己的宠物）
 				if(GameCommonData.Player.Role.UsingPetAnimal != null && 
 				   GameCommonData.Player.Role.UsingPetAnimal.Role.Id  == obj.RoleID )

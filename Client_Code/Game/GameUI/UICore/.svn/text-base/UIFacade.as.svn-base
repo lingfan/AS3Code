@@ -1,5 +1,6 @@
 package GameUI.UICore
 {
+	import Controller.PlayerSkinsController;
 	import Controller.TargetController;
 	
 	import GameUI.Command.AccLoginCommand;
@@ -130,8 +131,16 @@ package GameUI.UICore
 					break;
 				
 				case 81:	//快捷键Ｑ　上下坐骑
-//					btnType = 0;
-//					mainSenceMediator.useQuickBtn(btnType);
+					//btnType = 0;
+					if(GameCommonData.Player.Role.MountSkinID != 0)//下坐骑
+					{
+						PlayerSkinsController.UnMount();
+					}
+					else//上坐骑
+					{
+						PlayerSkinsController.SetMount();
+					}
+					//mainSenceMediator.useQuickBtn(MainSenceData.mainItemArr[btnType]);
 					break;
 				case 87:	//快捷键Ｗ　坐骑界面
 					btnType = 5;
@@ -579,9 +588,9 @@ package GameUI.UICore
 		 * @param info 显示的字符串
 		 * @param color 字体颜色
 		 * **/
-		public function showPormptUpper(info:String,color:uint):void
+		public function showOperatePormpt(info:String,color:uint):void
 		{
-			
+			sendNotification(HintEvents.RECEIVE_OPERATE_INFO, {info:info, color:color});
 		}
 		
 		/**显示中间的操作信息，比如金钱不够，等级不够之类的提示

@@ -52,11 +52,6 @@ package
 		/** 是否第一次登陆，是否要加载资源 */
 		public static var IsFirstLoadGame:Boolean = true;
 		
-		/**屏蔽玩家**/ // 0 屏所有  1 显示玩家  2 显示所有
-		/**屏蔽玩家**/ // 0 屏所有  1 显示所有
-		public static var Screen:int = 2;
-		
-		
 		/** 游戏玩家对象  */
 		public static var Player:GameElementPlayer;
 		/** 当前选中的目标对象（玩家、NPC、怪物） */
@@ -213,6 +208,8 @@ package
 		public static var MapTree:Dictionary = new Dictionary();
 		/** 副本数据表  */
 		public static var CopyData:Dictionary = new Dictionary();
+		/** 奖品表 **/
+		public static var prizes:Array = new Array();
 		/**经脉数据表**/
 		public static var MeridiansXML:Dictionary = new Dictionary();
 		

@@ -21,6 +21,7 @@ package Controller
 	import GameUI.Modules.Opera.Data.OperaEvents;
 	import GameUI.Modules.PlayerInfo.Mediator.SelfInfoMediator;
 	import GameUI.Modules.Relive.Data.ReliveEvent;
+	import GameUI.Modules.Screen.ScreenMediator;
 	import GameUI.Modules.Task.Commamd.TaskCommandList;
 	import GameUI.MouseCursor.DestinationCursor;
 	import GameUI.MouseCursor.RepeatRequest;
@@ -1955,27 +1956,9 @@ package Controller
 				       }
 					   break;  
 				}
-							
-				switch(player.Role.Type)
-				{
-					//如果是宠物
-					case GameRole.TYPE_PET:
-					if(GameCommonData.Screen == 0 || GameCommonData.Screen == 1)                            //屏宠物 屏所有
-					    if(!(GameCommonData.Player.Role.UsingPetAnimal != null &&                           //判断是不是自己的宠物
-						GameCommonData.Player.Role.UsingPetAnimal.Role.Id == player.Role.Id))			
-						player.Visible = false;
-					break;
-					case GameRole.TYPE_PLAYER:
-					   if(GameCommonData.Screen == 0)  
-					   {
-							player.Visible = false;
-						    if(player.Role.gameElementTernal != null)
-							{
-								player.Role.gameElementTernal.Visible = false;
-							}
-					   }
-					break;							
-				}
+				
+				var screenMediator:ScreenMediator = UIFacade.GetInstance(UIFacade.FACADEKEY).retrieveMediator(ScreenMediator.NAME) as ScreenMediator;
+				screenMediator.AddPlayerScreen(player);
 						
 				if(player.Role.isHidden)
 			    {
@@ -2075,6 +2058,8 @@ package Controller
 					//是否增加了人
 					var IsAddplayer:Boolean = false;
 					
+					var screenMediator:ScreenMediator = UIFacade.GetInstance(UIFacade.FACADEKEY).retrieveMediator(ScreenMediator.NAME) as ScreenMediator;
+					
 					//判断场景中显示的人数是否超过了最大数 减少1个增加1个 
 					if(this.ScenePlayerCount <= GameCommonData.SameSecnePlayerMaxCount)
 					{
@@ -2088,9 +2073,8 @@ package Controller
 								 Addplayer.Visible = true;
 								 IsAddplayer       = true; 
 								  						 
-						         if(GameCommonData.Screen == 0)  
-							        Addplayer.Visible = false;			
-							        
+								 screenMediator.AddPlayerScreen(Addplayer);
+								 
 							     this.ScenePlayerCount += 1;	            
 						         break;									 
 							}
@@ -2110,11 +2094,9 @@ package Controller
 									 Addpet.Enabled = true;  			 
 									 Addpet.Visible = true; 
 	
-						             if(GameCommonData.Screen == 0 || GameCommonData.Screen == 1)                            //屏宠物 屏所有
-						    		 if(!(GameCommonData.Player.Role.UsingPetAnimal != null &&                           //判断是不是自己的宠物
-							 		 GameCommonData.Player.Role.UsingPetAnimal.Role.Id == Addpet.Role.Id))			
-											Addpet.Visible = false;		
-											
+									 
+									 screenMediator.AddPlayerScreen(Addpet);
+									 
 									 this.ScenePlayerCount += 1;									
 									 break;								 
 								}

@@ -40,6 +40,7 @@ package GameUI.Modules.Opera.View
 			textField = new TextField();
 			textField.visible = false;
 			textField.width = 600;
+//			textField.x = 400;
 			textField.wordWrap=true;
 			addChild(textField);
 			
@@ -52,8 +53,14 @@ package GameUI.Modules.Opera.View
 
 			this.textField.text = str;
 			textField.setTextFormat(format);
-			
-			textField.autoSize = TextFieldAutoSize.CENTER;
+			textField.x = 350;
+//			textField.autoSize = TextFieldAutoSize.CENTER;
+		}
+		
+		public function setTextPosition(x:int,y:int):void
+		{
+			textField.x = x;
+			textField.y = y;
 		}
 	}
 }

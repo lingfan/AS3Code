@@ -114,13 +114,14 @@ package GameUI.Modules.Task.Mediator
 					
 					//清除数据
 					clearData();
-					
+					var index:int = 0;
+					var text:String = "";
 					if(taskInfo.status==0){
 					//	if(taskInfo.id==102){ 
 						    
 							
-							var index:int = taskInfo.taskNPC.indexOf("\\fx");
-							var text:String = taskInfo.taskNPC;
+							index = taskInfo.taskNPC.indexOf("\\fx");
+							text = taskInfo.taskNPC;
 							if(index > -1){
 								text = text.substring(0,index) + text.substr(index+3);
 							}
@@ -138,8 +139,8 @@ package GameUI.Modules.Task.Mediator
 					}else{
 						
 						
-						var index:int = taskInfo.taskCommitNPC.indexOf("\\fx");
-						var text:String = taskInfo.taskCommitNPC;
+						index = taskInfo.taskCommitNPC.indexOf("\\fx");
+						text = taskInfo.taskCommitNPC;
 						if(index > -1){
 							text = text.substring(0,index) + text.substr(index+3);
 						}

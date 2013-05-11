@@ -1,19 +1,7 @@
 K 25
 svn:wc:ra_dav:version-url
 V 46
-/svn/Client_Code/!svn/ver/1590/Game/Controller
-END
-AStarController.as
-K 25
-svn:wc:ra_dav:version-url
-V 62
-/svn/Client_Code/!svn/ver/1/Game/Controller/AStarController.as
-END
-CopyController.as
-K 25
-svn:wc:ra_dav:version-url
-V 64
-/svn/Client_Code/!svn/ver/1524/Game/Controller/CopyController.as
+/svn/Client_Code/!svn/ver/1603/Game/Controller
 END
 PKController.as
 K 25
@@ -21,11 +9,17 @@ svn:wc:ra_dav:version-url
 V 59
 /svn/Client_Code/!svn/ver/1/Game/Controller/PKController.as
 END
-ScreenController.as
+CopyController.as
 K 25
 svn:wc:ra_dav:version-url
-V 65
-/svn/Client_Code/!svn/ver/297/Game/Controller/ScreenController.as
+V 64
+/svn/Client_Code/!svn/ver/1524/Game/Controller/CopyController.as
+END
+AStarController.as
+K 25
+svn:wc:ra_dav:version-url
+V 62
+/svn/Client_Code/!svn/ver/1/Game/Controller/AStarController.as
 END
 AutomatismController.as
 K 25
@@ -33,35 +27,35 @@ svn:wc:ra_dav:version-url
 V 70
 /svn/Client_Code/!svn/ver/1587/Game/Controller/AutomatismController.as
 END
+PlayerActionHandler.as
+K 25
+svn:wc:ra_dav:version-url
+V 69
+/svn/Client_Code/!svn/ver/1603/Game/Controller/PlayerActionHandler.as
+END
 CooldownController.as
 K 25
 svn:wc:ra_dav:version-url
 V 68
 /svn/Client_Code/!svn/ver/1188/Game/Controller/CooldownController.as
 END
-PlayerActionHandler.as
+FlutterController.as
 K 25
 svn:wc:ra_dav:version-url
-V 69
-/svn/Client_Code/!svn/ver/1434/Game/Controller/PlayerActionHandler.as
+V 64
+/svn/Client_Code/!svn/ver/1/Game/Controller/FlutterController.as
+END
+PlayerSkillHandler.as
+K 25
+svn:wc:ra_dav:version-url
+V 68
+/svn/Client_Code/!svn/ver/1603/Game/Controller/PlayerSkillHandler.as
 END
 TerraceController.as
 K 25
 svn:wc:ra_dav:version-url
 V 64
 /svn/Client_Code/!svn/ver/1/Game/Controller/TerraceController.as
-END
-PlayerSkillHandler.as
-K 25
-svn:wc:ra_dav:version-url
-V 67
-/svn/Client_Code/!svn/ver/639/Game/Controller/PlayerSkillHandler.as
-END
-FlutterController.as
-K 25
-svn:wc:ra_dav:version-url
-V 64
-/svn/Client_Code/!svn/ver/1/Game/Controller/FlutterController.as
 END
 TargetController.as
 K 25
@@ -103,7 +97,7 @@ SceneController.as
 K 25
 svn:wc:ra_dav:version-url
 V 65
-/svn/Client_Code/!svn/ver/1594/Game/Controller/SceneController.as
+/svn/Client_Code/!svn/ver/1603/Game/Controller/SceneController.as
 END
 FloorEffectController.as
 K 25

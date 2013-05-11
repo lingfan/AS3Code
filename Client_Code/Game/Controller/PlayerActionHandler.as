@@ -1,5 +1,7 @@
 package Controller
 {
+	import GameUI.Modules.Screen.Data.ScreenData;
+	
 	import OopsEngine.AI.PathFinder.MapTileModel;
 	import OopsEngine.Graphics.Animation.AnimationEventArgs;
 	import OopsEngine.Role.GameRole;
@@ -339,6 +341,8 @@ package Controller
 					animationSkill.offsetY = player.Skins.y; 
 					animationSkill.StartClip("jn");
 					animationSkill.FrameRate = this.Animal.Skins.FrameRate;
+					
+					animationSkill.visible = !ScreenData.screen_skillEf; 
 					if(animationSkill.eventArgs.CurrentClipTotalFrameCount > 0)
 					{
 						animationSkill.blendMode = SkillInfo.blendMode1;
@@ -348,7 +352,6 @@ package Controller
 						if(player.playerEffect != null&&player.playerEffect.parent)
 							player.playerEffect.parent.removeChild(player.playerEffect);
 						player.playerEffect = animationSkill;
-						
 						
 					}
 					else

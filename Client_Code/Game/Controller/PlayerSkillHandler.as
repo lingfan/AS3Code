@@ -2,6 +2,7 @@ package Controller
 {
 	import GameUI.Modules.AutoPlay.Data.AutoPlayData;
 	import GameUI.Modules.AutoPlay.command.AutoPlayItemsCommand;
+	import GameUI.Modules.Screen.Data.ScreenData;
 	import GameUI.UICore.UIFacade;
 	
 	import OopsEngine.AI.PathFinder.MapTileModel;
@@ -341,6 +342,8 @@ package Controller
 				var animationSkill:SkillAnimation = ongameSkillResource.GetAnimation();
 				var effect:Sprite = new Sprite(); 		  	    
 				animationSkill.StartClip("jn");	  
+				animationSkill.visible = !ScreenData.screen_skillEf;
+				
 				animationSkill.blendMode = SkillInfo.blendMode2;
 				effect.addChild(animationSkill);
 				effect.x = this.Animal.HitX;
@@ -533,6 +536,7 @@ package Controller
 						animationSkill.offsetX = player.PlayerHitX;
 						animationSkill.offsetY = player.PlayerHitY;  	  	   
 						animationSkill.StartClip("jn");
+						animationSkill.visible = !ScreenData.screen_skillEf;
 						
 						if(animationSkill.eventArgs.CurrentClipTotalFrameCount > 0)
 						{
@@ -591,7 +595,9 @@ package Controller
 					animationSkill.offsetX = point.x;
 					animationSkill.offsetY = point.y;  
 					animationSkill.skillID = SkillInfo.SkillID;    
-					animationSkill.StartClip("jn");	   
+					animationSkill.StartClip("jn");	
+					animationSkill.visible = !ScreenData.screen_skillEf;
+					
 					if(animationSkill.eventArgs.CurrentClipTotalFrameCount > 0)
 					{
 						animationSkill.blendMode = SkillInfo.blendMode3;

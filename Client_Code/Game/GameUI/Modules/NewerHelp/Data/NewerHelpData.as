@@ -1,14 +1,40 @@
 package GameUI.Modules.NewerHelp.Data
 {
+	import Controller.PlayerController;
+	import Controller.TaskController;
+	
+	import GameUI.ConstData.EventList;
 	import GameUI.ConstData.UIConstData;
+	import GameUI.Mediator.UiNetAction;
+	import GameUI.Modules.AutoPlay.Data.AutoPlayData;
+	import GameUI.Modules.Bag.Datas.BagEvents;
 	import GameUI.Modules.Bag.Proxy.BagData;
+	import GameUI.Modules.Bag.Proxy.NetAction;
+	import GameUI.Modules.Equipment.command.EquipCommandList;
+	import GameUI.Modules.Equipment.model.EquipDataConst;
+	import GameUI.Modules.HeroSkill.SkillConst.SkillConst;
+	import GameUI.Modules.HeroSkill.SkillConst.SkillData;
+	import GameUI.Modules.MainSence.Data.MainSenceData;
 	import GameUI.Modules.Maket.Data.MarketConstData;
+	import GameUI.Modules.NPCChat.Proxy.DialogConstData;
+	import GameUI.Modules.NewPlayerSuccessAward.Data.NewAwardData;
+	import GameUI.Modules.NewerHelp.Data.NewerHelpData;
+	import GameUI.Modules.NewerHelp.Data.NewerHelpEvent;
 	import GameUI.Modules.NewerHelp.UI.NewerHelpItem;
+	import GameUI.Modules.Pet.Data.PetEvent;
+	import GameUI.Modules.RoleProperty.Datas.RoleEvents;
+	import GameUI.Modules.RoleProperty.Datas.RolePropDatas;
+	import GameUI.Modules.Task.Commamd.TaskCommandList;
 	import GameUI.Modules.Task.Model.TaskInfoStruct;
+	import GameUI.Modules.ToolTip.Const.IntroConst;
+	import GameUI.Proxy.DataProxy;
+	
+	import Net.ActionProcessor.ItemInfo;
 	
 	import flash.display.MovieClip;
 	import flash.geom.Point;
 	import flash.utils.Dictionary;
+
 	
 	public class NewerHelpData
 	{
@@ -23,6 +49,8 @@ package GameUI.Modules.NewerHelp.Data
 		public static var TASKINFO:TaskInfoStruct;
 		public static const HelpDic1:Array = [];//新功能开启后的指引
 		public static const HelpDic2:Array = [];//接受任务后的指引
+		public static var isPop:Boolean = false; //是否能任务道具弹出提示框！
+		public static var tipFun:Function;
 		public function NewerHelpData()
 		{
 		}
@@ -303,30 +331,30 @@ package GameUI.Modules.NewerHelp.Data
 		}
 		
 		/** 判断是否在新手指引中提示穿戴或使用技能 */
-		public static function isTip(type:int,id:int,how:Boolean = true):Boolean {
-			var flag:Boolean = false;
+		public static function isTip(type:int,how:Boolean = true):Boolean {
+			
 			if((type<=159999&&type>=110000)||(type<=199999&&type>=170000)||(type<=229999&&type>=210000)||(type<=503999&&type>=503000)){
 				
 														
 				
-				flag = true;
+				isPop = true;
 				
 				var currentJob:uint=(GameCommonData.Player.Role.CurrentJob==1) ? GameCommonData.Player.Role.MainJob.Job :GameCommonData.Player.Role.ViceJob.Job;
 				var obj:Object=UIConstData.getItem(type);
 				if(BagData.getItemByType(type)){
-					flag = false;
+					isPop = false;
 				}
 				
 				//职业
 				if(obj.Job!=0 && obj.Job!=currentJob){
 					
-					flag = false;
+					isPop = false;
 				}
 				//使用等级
 				if(how){
 					if(GameCommonData.Player.Role.Level<obj.Level){
 						
-						flag = false;
+						isPop = false;
 					}
 				}
 				
@@ -335,18 +363,171 @@ package GameUI.Modules.NewerHelp.Data
 				//姓别
 				if(obj.Sex!=0 && GameCommonData.Player.Role.Sex!=(obj.Sex-1)){
 					
-					flag = false;
+					isPop = false;
 				}
 				
 				
 				
 				
 			}else{
-				flag = false;
+				isPop = false;
 			}
-			return flag;
+			return isPop;
+//			if(isPop){
+//				
+//			}
 		}
 		
+		public static function getAtts(info:Object,obj:Object=null):Array {
+			var attArr:Array = new Array();
+			var data:Object;
+			if(info.type<=503999&&info.type>=503000){
+				return null;
+			}
+			if(int(info.baseAtt1 % 10000) != 0){
+				data = new Object();
+				data.name = IntroConst.AttDic[int(info.baseAtt1 / 10000)-1];
+				data.more = obj ? (int(info.baseAtt1 % 10000) - int(obj.baseAtt1 % 10000)).toString():(info.baseAtt1 % 10000).toString();
+				attArr.push(data);
+			}
+			if(int(info.baseAtt2 % 10000) != 0){
+				data = new Object();
+				data.name = IntroConst.AttDic[int(info.baseAtt2 / 10000)-1];
+				data.more = obj ? (int(info.baseAtt2 % 10000) - int(obj.baseAtt2 % 10000)).toString():(info.baseAtt2 % 10000).toString();
+				attArr.push(data);
+			}
+			if(int(info.baseAtt3 % 10000) != 0){
+				data = new Object();
+				data.name = IntroConst.AttDic[int(info.baseAtt3 / 10000)-1];
+				data.more = obj ? (int(info.baseAtt3 % 10000) - int(obj.baseAtt3 % 10000)).toString():(info.baseAtt3 % 10000).toString();
+				attArr.push(data);
+			}
+			if(int(info.baseAtt4 % 10000) != 0){
+				data = new Object();
+				data.name = IntroConst.AttDic[int(info.baseAtt4 / 10000)-1];
+				data.more = obj ? (int(info.baseAtt4 % 10000) - int(obj.baseAtt4 % 10000)).toString():(info.baseAtt4 % 10000).toString();
+				attArr.push(data);
+			}
+			return attArr;
+		}
+		
+		
+		/**
+		 * 获取任务奖励提示
+		 * 
+		 * 
+		 **/
+		public static function showTip(obj:Object=null):void{
+			
+			//			if(GameCommonData.Player.Role.Level<UIConstData.getItem(info.type).Level){
+			//				return;
+			//			}
+			//			if(GameCommonData.Player.Role.CurrentJobID != UIConstData.getItem(info.type).Job){
+			//				return
+			//			}
+			
+			if(info&&obj){
+				if(EquipDataConst.getInstance().getAttack(info)>EquipDataConst.getInstance().getAttack(obj)){
+					
+				//	_uiManager.openItemTip(getAtts(info,obj),info);
+					
+						tipFun(getAtts(info,obj),info);
+					
+				}
+				
+			}else if(info){
+				
+				
+				//_uiManager.openItemTip(getAtts(info),info);
+				
+					tipFun(getAtts(info),info);
+			
+				
+			}
+			
+			tipFun(null,null);
+			
+		}
+		
+		
+		private static var num:int =  0;
+		private static var info:Object;
+		private static var itemId:uint;
+		public static function getCompareInfo(data:Object,callBack:Function):void {
+			//UiNetAction.GetItemInfo(data.id, GameCommonData.Player.Role.Id, GameCommonData.Player.Role.Name);
+			tipFun = callBack;
+			if(IntroConst.ItemInfo[data.id])   
+			{
+				
+				info = IntroConst.ItemInfo[data.id];	
+				if(info.ItemNewNoticeState>=1){
+					return;
+				}else{
+					info.ItemNewNoticeState = 1;
+					NetAction.GetNewItem(data.id);
+				}
+				
+				
+				
+				
+				for(var i:int = 0; i<RolePropDatas.ItemList.length; i++)
+				{
+					if(RolePropDatas.ItemList[i] == undefined) continue;
+					
+					var typeDataItem:int  = data.type/10000;
+					var typeEquipItem:int = RolePropDatas.ItemList[i].type/10000;
+					var idEquipItem:int   = RolePropDatas.ItemList[i].id;
+					
+					if(typeDataItem == typeEquipItem)
+					{
+						if(IntroConst.ItemInfo[idEquipItem] == undefined)
+						{
+							//									ItemInfo.isParallel = true;
+							ItemInfo.queryIdList[idEquipItem] = idEquipItem;
+							NewerHelpData.HelpTipShow = true;
+							UiNetAction.GetItemInfo(idEquipItem, GameCommonData.Player.Role.Id, GameCommonData.Player.Role.Name);
+							
+						}
+						else
+						{ 
+							showTip(IntroConst.ItemInfo[idEquipItem]);
+							
+							
+						}
+						return;
+						
+					}
+					
+					
+				}
+				
+				showTip();
+				
+				
+			}
+			else
+			{
+				
+				NewerHelpData.HelpTipShow = true;
+				UiNetAction.GetItemInfo(data.id, GameCommonData.Player.Role.Id, GameCommonData.Player.Role.Name);
+				
+			}
+			
+			
+			
+			
+			//			getBagMaxEquip();
+			//			for each(var obj:Object in BagData.AllUserItems[0]){
+			//				
+			//			}
+			//			_uiManager.openItemTip();
+		}
+		
+		public static function isPopupTip():Boolean {
+		
+			return false;
+		}
+
 		
 		
 	}

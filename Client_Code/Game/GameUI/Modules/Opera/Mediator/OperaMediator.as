@@ -81,6 +81,7 @@ package GameUI.Modules.Opera.Mediator
 //					player.Stop();
 					GameCommonData.Scene.PlayerStop();
 					purdahPanel.mouseEnabled = false;
+					purdahPanel.skipFunction = skipOpera;
 					GameCommonData.GameInstance.GameScene.GetGameScene.MouseEnabled = false;
 					break;
 				
@@ -189,6 +190,7 @@ package GameUI.Modules.Opera.Mediator
 								break;
 							case "2":										//对话
 //								trace("segment.type ="+type+" case 2");
+								purdahPanel.setSkipVisible(true);
 								
 								for(playerNo in OperaRolesDic)
 								{
@@ -200,16 +202,21 @@ package GameUI.Modules.Opera.Mediator
 								playerName = obj.segment[i].player.toString()
 								if(playerName == "")
 								{
+									//人物名
 									talkObj[0] = GameCommonData.Player.Role.Name;
+									//人物头像
+									talkObj[1] = GameCommonData.Player.Role.CurrentJobID+"_"+GameCommonData.Player.Role.Sex;
 								}
 								else
 								{
 									talkObj[0] = obj.segment[i].player.toString();    //对话人物
+									talkObj[1] = obj.segment[i].skinId.toString();
 								}
 								
 								talkObj[3] = talkObj[0]+":  "+obj.segment[i].talkInfo.toString();
 								tmp.talkObj = talkObj;
 								purdahPanel.talk(talkObj);
+								purdahPanel.addRoleImage(talkObj[1]);
 								
 								if(obj.segment[i].talkInfo.toString().length>24)
 								{
@@ -219,7 +226,9 @@ package GameUI.Modules.Opera.Mediator
 									
 									tmp.talkObj = talkObj;
 								}
-								facade.sendNotification(HeadTalkCommand.NAME,tmp);
+								
+//								var play:GameElementAnimal = TalkController.talk(talkObj[0]); 
+//								facade.sendNotification(HeadTalkCommand.NAME,tmp);
 
 								break;
 							case "3":										//人物打斗
@@ -263,6 +272,7 @@ package GameUI.Modules.Opera.Mediator
 				case OperaEvents.CLEAROPERA:	
 					
 					//清理计时器
+					purdahPanel.setSkipVisible(false);
 					if(timeId != 0){
 						clearTimeout(timeId);
 					}
@@ -278,6 +288,7 @@ package GameUI.Modules.Opera.Mediator
 					}
 					if(purdahPanel!=null)
 					{
+						purdahPanel.removeImage();
 						purdahPanel.exited = exited;
 						purdahPanel.exit();
 						
@@ -300,6 +311,11 @@ package GameUI.Modules.Opera.Mediator
 		private function exited():void{
 			this.purdahPanel = null;
 			CopyController.getInstance().start();
+		}
+		
+		public function skipOpera():void
+		{
+			facade.sendNotification(OperaEvents.CLEAROPERA);
 		}
 		
 		private function resumeMouseEnable():void

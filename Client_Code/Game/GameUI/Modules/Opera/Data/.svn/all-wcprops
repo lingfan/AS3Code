@@ -1,7 +1,7 @@
 K 25
 svn:wc:ra_dav:version-url
-V 60
-/svn/Client_Code/!svn/ver/164/Game/GameUI/Modules/Opera/Data
+V 61
+/svn/Client_Code/!svn/ver/1608/Game/GameUI/Modules/Opera/Data
 END
 OperaEvents.as
 K 25
@@ -12,6 +12,6 @@ END
 OperaConfig.as
 K 25
 svn:wc:ra_dav:version-url
-V 75
-/svn/Client_Code/!svn/ver/164/Game/GameUI/Modules/Opera/Data/OperaConfig.as
+V 76
+/svn/Client_Code/!svn/ver/1608/Game/GameUI/Modules/Opera/Data/OperaConfig.as
 END

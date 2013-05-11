@@ -1,7 +1,6 @@
 package GameUI.Modules.ChangeLine
 {
 	import Controller.PlayerSkinsController;
-	import Controller.ScreenController;
 	
 	import GameUI.ConstData.EventList;
 	import GameUI.Modules.Bag.Proxy.NetAction;
@@ -320,7 +319,7 @@ package GameUI.Modules.ChangeLine
 				return;
 			}
 			
-			if ( ( new Date().getTime()-startTime.getTime() )<10000 )
+			if ( ( new Date().time - startTime.getTime() )<10000 )
 			{
 				facade.sendNotification(HintEvents.RECEIVEINFO, {info:GameCommonData.wordDic[ "mod_cha_cha_cli_1" ], color:0xffff00});//"十秒后才能切换服务器"
 				return;
@@ -647,28 +646,6 @@ package GameUI.Modules.ChangeLine
 		
 		private function setScreenTxt():void
 		{
-			if ( ScreenController.IsCanChangeScreen )
-			{
-				ScreenController.SetScreen();	
-			}
-			
-			if ( keyScreen_mc )
-			{
-				switch ( GameCommonData.Screen )
-				{
-					case 2:
-						( keyScreen_mc.hint_txt as TextField ).text = GameCommonData.wordDic[ "mod_cha_cha_add" ];//"一键屏蔽"
-					break;
-				
-					case 0:
-						( keyScreen_mc.hint_txt as TextField ).text = GameCommonData.wordDic[ "mod_cha_cha_set_1" ];//"显示玩家"
-					break;
-				
-					case 1:
-						( keyScreen_mc.hint_txt as TextField ).text = GameCommonData.wordDic[ "mod_cha_cha_set_2" ];//"显示宠物"
-					break;
-				}
-			}
 		}
 		
 		private function canHandle(isHandle:Boolean):void

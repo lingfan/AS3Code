@@ -22,7 +22,7 @@ package
 			UIFacade.GetInstance(UIFacade.FACADEKEY).openHelpView();
 		}
 		public function MenuVersion():String{
-			return "tc.058";
+			return "tc.062";
 		}
 	}
 }

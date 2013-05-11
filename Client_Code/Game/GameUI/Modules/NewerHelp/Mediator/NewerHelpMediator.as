@@ -319,7 +319,7 @@ package GameUI.Modules.NewerHelp.Mediator
 			        recallTask(notification.getBody() as uint);
 			        break;
 				case NewerHelpEvent.ADD_ITEM_BAG:
-					getCompareInfo(notification.getBody() as Object);
+					popTip(notification.getBody() as Array);
 					break;
 				case NewerHelpEvent.GET_TIP_INFO_COMPLETE:
 					
@@ -343,6 +343,10 @@ package GameUI.Modules.NewerHelp.Mediator
 					break;
 				
 			}
+		}
+		
+		private function popTip(arr:Array):void{
+			_uiManager.openItemTip(arr[0] as Array,arr[1] as Object);
 		}
 		
 		//新功能开启

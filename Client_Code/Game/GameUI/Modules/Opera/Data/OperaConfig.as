@@ -80,6 +80,7 @@ package GameUI.Modules.Opera.Data
 							break;
 						case "2":
 							seg.talkInfo = xml.opera[ii].segment[jj].@talkinfo.toString();
+							seg.skinId = xml.opera[ii].segment[jj].@skinId.toString();
 							trace(seg.talkInfo);
 							break;
 						case "3":										//人物打斗

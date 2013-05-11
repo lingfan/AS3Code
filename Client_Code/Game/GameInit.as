@@ -218,7 +218,8 @@ package
 			GameCommonData.RolesListDic[8192] = GameCommonData.wordDic[ "often_used_xs" ];				//新手
 			
 			CooldownController.getInstance();
-			
+			GameCommonData.prizes = GameCommonData.GameInstance.Content.Load( GameConfigData.Other_XML_SWF ).GetDisplayObject()["prizes"] as Array;
+		
 		     XmlUtils.createXml();
 			/** 启动MVC  */
 			GameCommonData.UIFacadeIntance.StartUp();

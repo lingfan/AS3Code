@@ -1,7 +1,7 @@
 K 25
 svn:wc:ra_dav:version-url
 V 55
-/svn/Client_Code/!svn/ver/1587/Game/Net/ActionProcessor
+/svn/Client_Code/!svn/ver/1611/Game/Net/ActionProcessor
 END
 Tutor.as
 K 25
@@ -111,11 +111,11 @@ svn:wc:ra_dav:version-url
 V 65
 /svn/Client_Code/!svn/ver/1/Game/Net/ActionProcessor/SynAction.as
 END
-TeamPos.as
+PlayerInfo.as
 K 25
 svn:wc:ra_dav:version-url
-V 63
-/svn/Client_Code/!svn/ver/1/Game/Net/ActionProcessor/TeamPos.as
+V 69
+/svn/Client_Code/!svn/ver/1434/Game/Net/ActionProcessor/PlayerInfo.as
 END
 NPCShopAction.as
 K 25
@@ -123,11 +123,11 @@ svn:wc:ra_dav:version-url
 V 69
 /svn/Client_Code/!svn/ver/1/Game/Net/ActionProcessor/NPCShopAction.as
 END
-PlayerInfo.as
+TeamPos.as
 K 25
 svn:wc:ra_dav:version-url
-V 69
-/svn/Client_Code/!svn/ver/1434/Game/Net/ActionProcessor/PlayerInfo.as
+V 63
+/svn/Client_Code/!svn/ver/1/Game/Net/ActionProcessor/TeamPos.as
 END
 PrepaidLevelAction.as
 K 25
@@ -135,17 +135,17 @@ svn:wc:ra_dav:version-url
 V 74
 /svn/Client_Code/!svn/ver/1/Game/Net/ActionProcessor/PrepaidLevelAction.as
 END
-SoulPictureAction.as
-K 25
-svn:wc:ra_dav:version-url
-V 73
-/svn/Client_Code/!svn/ver/1/Game/Net/ActionProcessor/SoulPictureAction.as
-END
 GameServerInfo.as
 K 25
 svn:wc:ra_dav:version-url
 V 70
 /svn/Client_Code/!svn/ver/1/Game/Net/ActionProcessor/GameServerInfo.as
+END
+SoulPictureAction.as
+K 25
+svn:wc:ra_dav:version-url
+V 73
+/svn/Client_Code/!svn/ver/1/Game/Net/ActionProcessor/SoulPictureAction.as
 END
 OperateItem.as
 K 25
@@ -165,17 +165,17 @@ svn:wc:ra_dav:version-url
 V 67
 /svn/Client_Code/!svn/ver/862/Game/Net/ActionProcessor/UserTitle.as
 END
-MarketAction.as
-K 25
-svn:wc:ra_dav:version-url
-V 71
-/svn/Client_Code/!svn/ver/1007/Game/Net/ActionProcessor/MarketAction.as
-END
 CompensateStorageAction.as
 K 25
 svn:wc:ra_dav:version-url
 V 79
 /svn/Client_Code/!svn/ver/1/Game/Net/ActionProcessor/CompensateStorageAction.as
+END
+MarketAction.as
+K 25
+svn:wc:ra_dav:version-url
+V 71
+/svn/Client_Code/!svn/ver/1007/Game/Net/ActionProcessor/MarketAction.as
 END
 PlayerCombat.as
 K 25
@@ -319,7 +319,7 @@ PlayerWalk.as
 K 25
 svn:wc:ra_dav:version-url
 V 69
-/svn/Client_Code/!svn/ver/1147/Game/Net/ActionProcessor/PlayerWalk.as
+/svn/Client_Code/!svn/ver/1611/Game/Net/ActionProcessor/PlayerWalk.as
 END
 PetEgg.as
 K 25

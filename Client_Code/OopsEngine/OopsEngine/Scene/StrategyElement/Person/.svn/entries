@@ -1,7 +1,7 @@
 10
 
 dir
-1593
+1614
 https://win-n4oe9h0b0ve:8443/svn/Client_Code/OopsEngine/OopsEngine/Scene/StrategyElement/Person
 https://win-n4oe9h0b0ve:8443/svn/Client_Code
 
@@ -25,40 +25,6 @@ xushengyue
 
 
 8a142385-da77-e44e-812a-f798b87e32c2
-
-GameElementTernalSkin.as
-file
-
-
-
-
-2013-05-06T01:40:59.254535Z
-e943560e0bbd596056e1783d1566d517
-2012-07-23T08:10:03.894451Z
-1
-wuzhouhai
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-9139
 
 GameElementNPCData.as
 file
@@ -94,17 +60,17 @@ xushengyue
 
 1450
 
-GameElementEnemy.as
+GameElementTernalSkin.as
 file
 
 
 
 
 2013-05-06T01:40:59.254535Z
-f76ac1bd64c77e6e6ec666d0cc57cd7c
-2013-04-17T03:18:41.505025Z
-1234
-xushengyue
+e943560e0bbd596056e1783d1566d517
+2012-07-23T08:10:03.894451Z
+1
+wuzhouhai
 
 
 
@@ -126,7 +92,7 @@ xushengyue
 
 
 
-4317
+9139
 
 GameElementEnemyAnimation.as
 file
@@ -162,17 +128,17 @@ wuzhouhai
 
 986
 
-GameElementTernalData.as
+GameElementEnemy.as
 file
 
 
 
 
 2013-05-06T01:40:59.254535Z
-266a6017cb9a76ebdfb261c3ea8010de
-2012-07-23T08:10:03.894451Z
-1
-wuzhouhai
+f76ac1bd64c77e6e6ec666d0cc57cd7c
+2013-04-17T03:18:41.505025Z
+1234
+xushengyue
 
 
 
@@ -194,7 +160,7 @@ wuzhouhai
 
 
 
-804
+4317
 
 GameElementStall.as
 file
@@ -229,6 +195,40 @@ wuzhouhai
 
 
 525
+
+GameElementTernalData.as
+file
+
+
+
+
+2013-05-06T01:40:59.254535Z
+266a6017cb9a76ebdfb261c3ea8010de
+2012-07-23T08:10:03.894451Z
+1
+wuzhouhai
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+804
 
 GameElementNPC.as
 file
@@ -298,40 +298,6 @@ xushengyue
 
 30537
 
-GameElementTernalAnimation.as
-file
-
-
-
-
-2013-05-06T01:40:59.254535Z
-ba97049b00a46ab8c1aedb7fb35daf72
-2012-07-23T08:10:03.894451Z
-1
-wuzhouhai
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-299
-
 GameElementTernal.as
 file
 
@@ -365,6 +331,40 @@ wuzhouhai
 
 
 1341
+
+GameElementTernalAnimation.as
+file
+
+
+
+
+2013-05-06T01:40:59.254535Z
+ba97049b00a46ab8c1aedb7fb35daf72
+2012-07-23T08:10:03.894451Z
+1
+wuzhouhai
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+299
 
 GameElementPlayerData.as
 file
@@ -434,17 +434,17 @@ xushengyue
 
 14027
 
-GameElementMountData.as
+GameElementPlayerAnimation.as
 file
 
 
 
 
 2013-05-06T01:40:59.254535Z
-645e3ece9d21bfe40c9cd62c65aa5dd0
-2013-04-27T03:19:25.035165Z
-1433
-xushengyue
+0bed029668150a5ae3733eb644f97a8a
+2012-07-23T08:10:03.894451Z
+1
+wuzhouhai
 
 
 
@@ -466,7 +466,7 @@ xushengyue
 
 
 
-1396
+685
 
 GameElementPlayer.as
 file
@@ -502,17 +502,17 @@ xushengyue
 
 14956
 
-GameElementPlayerAnimation.as
+GameElementMountData.as
 file
 
 
 
 
 2013-05-06T01:40:59.254535Z
-0bed029668150a5ae3733eb644f97a8a
-2012-07-23T08:10:03.894451Z
-1
-wuzhouhai
+645e3ece9d21bfe40c9cd62c65aa5dd0
+2013-04-27T03:19:25.035165Z
+1433
+xushengyue
 
 
 
@@ -534,7 +534,7 @@ wuzhouhai
 
 
 
-685
+1396
 
 GameElementEnemySkin.as
 file

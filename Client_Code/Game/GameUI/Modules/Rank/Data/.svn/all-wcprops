@@ -1,7 +1,7 @@
 K 25
 svn:wc:ra_dav:version-url
-V 57
-/svn/Client_Code/!svn/ver/1/Game/GameUI/Modules/Rank/Data
+V 60
+/svn/Client_Code/!svn/ver/1611/Game/GameUI/Modules/Rank/Data
 END
 RankEvent.as
 K 25
@@ -12,6 +12,6 @@ END
 RankConstData.as
 K 25
 svn:wc:ra_dav:version-url
-V 74
-/svn/Client_Code/!svn/ver/1/Game/GameUI/Modules/Rank/Data/RankConstData.as
+V 77
+/svn/Client_Code/!svn/ver/1611/Game/GameUI/Modules/Rank/Data/RankConstData.as
 END

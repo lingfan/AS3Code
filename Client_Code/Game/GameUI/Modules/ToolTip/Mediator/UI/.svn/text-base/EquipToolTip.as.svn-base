@@ -141,8 +141,11 @@ package GameUI.Modules.ToolTip.Mediator.UI
 
 			var obj:Object = UIConstData.getItem(data.type) as Object;
 			
-			var infoData:Object = IntroConst.ItemInfo[data.id]
-				
+			var infoData:Object = IntroConst.ItemInfo[data.id];
+			if(infoData == null){//数据不存在的时候，直接读取默认的数据做为假数据填充
+				var tmpData:Object = {baseAtt1:obj.BaseList[0],baseAtt2:obj.BaseList[1],baseAtt3:obj.BaseList[2],baseAtt4:obj.BaseList[3]};	
+				infoData= tmpData;
+			}
 			info.txt_fight.text = EquipDataConst.getInstance().getAttack(infoData);//战斗力
 			info.txtJob.text = GameCommonData.RolesListDic[UIConstData.getItem(data.type).Job] + ""; //需求职业
 			info.txtLevel.text = UIConstData.getItem(data.type).Level+"";//需求等级

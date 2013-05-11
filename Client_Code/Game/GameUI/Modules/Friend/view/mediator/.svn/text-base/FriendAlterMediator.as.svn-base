@@ -49,7 +49,7 @@ package GameUI.Modules.Friend.view.mediator
 			switch (notification.getName()){
 				case FriendCommandList.SHOW_FRIEND_ALTER:
 					playerInfo=notification.getBody() as PlayerInfoStruct;
-					var str:String='<font color="#ff0000">'+playerInfo.roleName+'</font><font color="#ffffff">'+GameCommonData.wordDic[ "mod_fri_view_med_friendA_han_2" ]+'</font>';//申请加你为好友？
+					var str:String='<font color="#ff0000">'+playerInfo.roleName+'</font><font color="#ffffff">申请加你为好友</font>';//申请加你为好友？
 					UIFacade.UIFacadeInstance.sendNotification(EventList.SHOWALERT,{comfrim:onAgreeHandler, cancel:onDisagreeHandler, isShowClose:false, info:str,htmlText:true, comfirmTxt:"是", cancelTxt:"否"});
 					break;
 				case FriendCommandList.CLOSE_FRIEND_ALTER:

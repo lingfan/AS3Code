@@ -84,6 +84,11 @@ package GameUI.Modules.UnityNew.Mediator
 		{
 			//checkIsJoin();
 			showView();
+			if ( !newLookUnityMediator )
+			{
+				newLookUnityMediator = new NewLookUnityMediator();
+				facade.registerMediator( newLookUnityMediator );
+			}
 		}
 		
 //		private function checkIsJoin():void

@@ -117,6 +117,7 @@ package GameUI.Modules.Map.SmallMap.Mediator
 					
 					//屏蔽玩家控制器
 					facade.registerMediator(new ScreenMediator());
+					facade.sendNotification(ScreenData.INITEVENT);
 				break;
 				case EventList.ENTERMAPCOMPLETE:
 					GameCommonData.GameInstance.GameUI.addChild(SmallMap);

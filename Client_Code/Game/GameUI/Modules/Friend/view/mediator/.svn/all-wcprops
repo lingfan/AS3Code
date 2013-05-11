@@ -1,7 +1,7 @@
 K 25
 svn:wc:ra_dav:version-url
 V 71
-/svn/Client_Code/!svn/ver/1451/Game/GameUI/Modules/Friend/view/mediator
+/svn/Client_Code/!svn/ver/1611/Game/GameUI/Modules/Friend/view/mediator
 END
 PlayerInfoMediator.as
 K 25
@@ -19,7 +19,7 @@ FriendAlterMediator.as
 K 25
 svn:wc:ra_dav:version-url
 V 94
-/svn/Client_Code/!svn/ver/1444/Game/GameUI/Modules/Friend/view/mediator/FriendAlterMediator.as
+/svn/Client_Code/!svn/ver/1611/Game/GameUI/Modules/Friend/view/mediator/FriendAlterMediator.as
 END
 SendMsgMediator.as
 K 25

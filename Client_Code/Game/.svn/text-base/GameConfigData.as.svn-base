@@ -138,6 +138,9 @@ package
 		/** 组队列表页面 */
 		public static var NewTeamUI:String = "Resources/GameDLC/NewTeam.swf";
 			
+		/** 排行页面 */
+		public static var RankUI:String 			= "Resources/GameDLC/Rank.swf";
+		
 		//改版后的xmlswf加载地址
 		/**技能*/
 		public static var Skill_XML_SWF:String = "Resources/GameData/SkillXML.swf";
